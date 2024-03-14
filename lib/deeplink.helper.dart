@@ -26,9 +26,11 @@ class DeeplinkHelper {
   static String create({
     required String schema,
     required String url,
+    // without / slash
     required String path,
+    String? text,
     String? params,
   }) {
-    return '$schema://$url/$path${params != null ? '?$params' : ''}';
+    return '$text $schema://$url/$path${params != null ? '?$params' : ''} \n';
   }
 }
